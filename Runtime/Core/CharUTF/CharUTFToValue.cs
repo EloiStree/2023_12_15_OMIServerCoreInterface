@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class CharUTFToValue<T> : I_CharUTFToValue<T> where T : struct
+public class CharUTFToValue<T> : I_CharUTFToValue<T>, I_SetCharUTFToValue<T> where T : struct
 {
     public string m_charAsIndex;
     public T[] m_stringNameValueArray;
+
 
     public void GetChatUniqueId(out string charAsString)
     {
@@ -25,6 +26,12 @@ public class CharUTFToValue<T> : I_CharUTFToValue<T> where T : struct
     {
         return m_stringNameValueArray;
     }
+
+    public void SetCharAndArray(string charAsString, T[] array)
+    {
+        m_charAsIndex = charAsString;
+        m_stringNameValueArray = array;
+    }
 }
 
 
@@ -34,6 +41,10 @@ public interface I_CharUTFToValue<T> {
     public string GetChatUniqueId();
     public void GetValueAsArray(out T[] values );
     public T[] GetValueAsArray();
+}
+
+public interface I_SetCharUTFToValue<T> {
+    public void SetCharAndArray(string charAsString, T[] array);
 }
 
 public interface I_CharUTFToValueBoolean : I_CharUTFToValue<bool> { }
