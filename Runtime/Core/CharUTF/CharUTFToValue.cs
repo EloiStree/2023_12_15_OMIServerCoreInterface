@@ -3,16 +3,16 @@
 [System.Serializable]
 public class CharUTFToValue<T> : I_CharUTFToValue<T>, I_SetCharUTFToValue<T> where T : struct
 {
-    public string m_charAsIndex;
+    public char m_charAsIndex;
     public T[] m_stringNameValueArray;
 
 
-    public void GetChatUniqueId(out string charAsString)
+    public void GetChatUniqueId(out char charAsString)
     {
         charAsString = m_charAsIndex;
     }
 
-    public string GetChatUniqueId()
+    public char GetChatUniqueId()
     {
         return m_charAsIndex;
     }
@@ -27,7 +27,7 @@ public class CharUTFToValue<T> : I_CharUTFToValue<T>, I_SetCharUTFToValue<T> whe
         return m_stringNameValueArray;
     }
 
-    public void SetCharAndArray(string charAsString, T[] array)
+    public void SetCharAndArray(char charAsString, T[] array)
     {
         m_charAsIndex = charAsString;
         m_stringNameValueArray = array;
@@ -37,14 +37,14 @@ public class CharUTFToValue<T> : I_CharUTFToValue<T>, I_SetCharUTFToValue<T> whe
 
 public interface I_CharUTFToValue<T> {
 
-    public void GetChatUniqueId(out string charAsString);
-    public string GetChatUniqueId();
+    public void GetChatUniqueId(out char charAsString);
+    public char GetChatUniqueId();
     public void GetValueAsArray(out T[] values );
     public T[] GetValueAsArray();
 }
 
 public interface I_SetCharUTFToValue<T> {
-    public void SetCharAndArray(string charAsString, T[] array);
+    public void SetCharAndArray(char charAsString, T[] array);
 }
 
 public interface I_CharUTFToValueBoolean : I_CharUTFToValue<bool> { }

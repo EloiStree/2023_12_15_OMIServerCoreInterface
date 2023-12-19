@@ -5,25 +5,26 @@ using UnityEngine.Events;
 [System.Serializable]
 public class CharUTFToNamedIndexed: I_CharUTFToName
 {
-    public string m_charAsIndex="";
+    public char m_charAsIndex =' ';
     public string[] m_stringNameArray= new string[0];
 
+    
     public CharUTFToNamedIndexed()
     {
     }
 
-    public CharUTFToNamedIndexed(string charAsIndex, params string[] stringNameArray)
+    public CharUTFToNamedIndexed(char charAsIndex, params string[] stringNameArray)
     {
         m_charAsIndex = charAsIndex;
-        m_stringNameArray = stringNameArray;
+        m_stringNameArray = stringNameArray; 
     }
 
-    public void GetChatUniqueId(out string charAsString)
+    public void GetChatUniqueId(out char charAsString)
     {
         charAsString = m_charAsIndex;
     }
 
-    public string GetChatUniqueId()
+    public char GetChatUniqueId()
     {
         return m_charAsIndex;
     }
@@ -46,10 +47,11 @@ public class CharUTFToNamedIndexed: I_CharUTFToName
 [System.Serializable]
 public class CharUTFToNamedIndexedWithDefault<T>
 {
-    public string m_charAsIndex="";
+    public char m_charAsIndex =' ';
     public string[] m_stringNameArray= new string[0];
     public T m_defaultValue;
 
+   
     public CharUTFToNamedIndexed GetWithoutDefaultValue()
     {
         return new CharUTFToNamedIndexed(m_charAsIndex, m_stringNameArray);
