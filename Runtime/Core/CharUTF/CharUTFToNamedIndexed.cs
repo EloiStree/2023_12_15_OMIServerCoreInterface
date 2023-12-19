@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class CharUTFToNamedIndexed: I_CharUTFToValueName
+public class CharUTFToNamedIndexed: I_CharUTFToName
 {
     public string m_charAsIndex="";
     public string[] m_stringNameArray= new string[0];
@@ -36,6 +36,11 @@ public class CharUTFToNamedIndexed: I_CharUTFToValueName
     public string[] GetValueAsArray()
     {
         return m_stringNameArray;
+    }
+    public int GetLenght() { return m_stringNameArray.Length; }
+    public string GetFromIndex(int index)
+    {
+        return m_stringNameArray[index];
     }
 }
 [System.Serializable]
