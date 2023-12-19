@@ -1,12 +1,12 @@
 ﻿[System.Serializable]
 public class CharUTFToBoolArray : CharUTFToValue<bool>, I_CharUTFToValueBoolean
 {
-    public CharUTFToBoolArray(string c, bool[] array)
+    public CharUTFToBoolArray(char c, bool[] array)
     {
         SetCharAndArray(c, array);
     }
     public CharUTFToBoolArray()
     {
-        SetCharAndArray("", new bool[0]);
+        SetCharAndArray(' ', new bool[0]);
     }
 }

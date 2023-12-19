@@ -3,12 +3,12 @@
 [System.Serializable]
 public class CharUTFToQuaternionArray : CharUTFToValue<Quaternion>, I_CharUTFToValueQuaternion
 {
-    public CharUTFToQuaternionArray(string c, Quaternion[] array)
+    public CharUTFToQuaternionArray(char c, Quaternion[] array)
     {
         SetCharAndArray(c, array);
     }
     public CharUTFToQuaternionArray()
     {
-        SetCharAndArray("", new Quaternion[0]);
+        SetCharAndArray(' ', new Quaternion[0]);
     }
 }
